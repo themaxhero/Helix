@@ -25,7 +25,7 @@ defmodule Helix.Universe.NPC.Internal.Web do
     Map.merge(common, custom)
   end
   def generate_content(_, _, _),
-    do: nil
+    do: %{}
 
   defp common(title) do
     %{
