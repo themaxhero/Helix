@@ -127,6 +127,7 @@ defmodule Helix.Story.Event.Handler.Story do
   This action does not use or depends on `Steppable`.
   """
   defp handle_action({:send_email, email_id, meta, opts}, step, _story_step) do
+    IO.puts "will send email #{inspect email_id}"
     with {:ok, events} <- StoryAction.send_email(step, email_id, meta) do
       emit(events, opts, from: step.event)
 
@@ -140,6 +141,7 @@ defmodule Helix.Story.Event.Handler.Story do
   This action does not use or depends on `Steppable`.
   """
   defp handle_action({:send_reply, reply_id, opts}, step, story_step) do
+    IO.puts "will send reply #{inspect reply_id}"
     with {:ok, events} <- StoryAction.send_reply(step, story_step, reply_id) do
       emit(events, opts, from: step.event)
 
