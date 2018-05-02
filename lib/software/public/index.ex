@@ -120,6 +120,7 @@ defmodule Helix.Software.Public.Index do
       version: version,
       name: to_string(file.name),
       extension: extension,
+      storage_id: to_string(file.storage_id),
       meta: file.meta
     }
   end
