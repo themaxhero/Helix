@@ -38,7 +38,8 @@ defmodule Helix.Story.Event.Step do
       def generate_payload(event, _socket) do
         data = %{
           previous_step: to_string(event.previous_step.name),
-          next_step: to_string(event.next_step.name)
+          next_step: to_string(event.next_step.name),
+          contact_id: event.next_step.contact
         }
 
         {:ok, data}
